@@ -27,7 +27,7 @@ public class CockatielController {
     @Autowired
     private CockatielRepository repository;
 
-    @CrossOrigin(origins = "*", allowedHeaders="*")
+    @CrossOrigin(origins = "https://cockatiel-listner.vercel.app/", allowedHeaders="*")
     @PostMapping
     public void saveCockatiel(@RequestBody CockatielRequestDTO data){
 
@@ -35,7 +35,7 @@ public class CockatielController {
         repository.save(cockatielData);
 
     }
-    @CrossOrigin(origins = "*", allowedHeaders="*")
+    @CrossOrigin(origins = "https://cockatiel-listner.vercel.app/", allowedHeaders="*")
     @GetMapping
     public List<CockatielResponseDTO> getAll(){
 
@@ -43,7 +43,7 @@ public class CockatielController {
         return cockatielList;
     }
 
-    @CrossOrigin(origins = "*", allowedHeaders="*")
+    @CrossOrigin(origins = "https://cockatiel-listner.vercel.app/", allowedHeaders="*")
     @PutMapping
     @Transactional
     public void updateCockatiel(@RequestBody @Validated CockatielUpdateDTO data){
@@ -51,7 +51,7 @@ public class CockatielController {
         cockatiel.updateInfo(data);
 
     }
-    @CrossOrigin(origins = "*", allowedHeaders="*")
+    @CrossOrigin(origins = "https://cockatiel-listner.vercel.app/", allowedHeaders="*")
     @DeleteMapping("/{id}")
     @Transactional
     public void deleteCockatiel(@PathVariable UUID id){
